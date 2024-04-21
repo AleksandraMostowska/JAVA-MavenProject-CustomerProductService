@@ -1,0 +1,4 @@
+2024-03-28 18:22:26 INFO AMFileLogger [main] [Customer(id=5, firstName=William, lastName=Taylor, age=40, cash=1500, preferences=[3, 2, 1])]
+2024-03-28 18:22:26 INFO AMFileLogger [main] [Customer(id=4, firstName=Sarah, lastName=Davis, age=22, cash=2000, preferences=[1, 2])]
+2024-03-28 18:22:26 INFO AMFileLogger [main] {Product(id=1, name=Shoes, category=Fashion, price=130)=1, Product(id=2, name=Laptop, category=Electronics, price=1200)=1, Product(id=2, name=Shower gel, category=Beauty, price=15)=2, Product(id=2, name=Orange juice, category=Groceries, price=12)=2, Product(id=1, name=Milk, category=Groceries, price=5)=2, Product(id=3, name=Body lotion, category=Beauty, price=35)=2, Product(id=2, name=Table, category=Furniture, price=550)=1, Product(id=1, name=Smartphone, category=Electronics, price=800)=3, Product(id=3, name=Cookies, category=Groceries, price=25)=2}
+2024-03-28 18:22:26 INFO AMFileLogger [main] [Groceries, Beauty, Electronics, Fashion, Furniture]

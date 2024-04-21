@@ -1,0 +1,24 @@
+{
+  "preferences": [
+    {
+      "id": 1,
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "category": "Groceries"
+    },
+    {
+      "id": 3,
+      "category": "Furniture"
+    },
+    {
+      "id": 4,
+      "category": "Fashion"
+    },
+    {
+      "id": 5,
+      "category": "Beauty"
+    }
+  ]
+}

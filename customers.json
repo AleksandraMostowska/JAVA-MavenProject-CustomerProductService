@@ -1,0 +1,44 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "age": 18,
+      "cash": 1000,
+      "preferences": [1, 4, 5]
+    },
+    {
+      "id": 2,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "age": 25,
+      "cash": 200,
+      "preferences": [2, 3]
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Brown",
+      "age": 30,
+      "cash": 50,
+      "preferences": [5, 1]
+    },
+    {
+      "id": 4,
+      "firstName": "Sarah",
+      "lastName": "Davis",
+      "age": 22,
+      "cash": 2000,
+      "preferences": [1, 2]
+    },
+    {
+      "id": 5,
+      "firstName": "William",
+      "lastName": "Taylor",
+      "age": 40,
+      "cash": 1500,
+      "preferences": [3, 2, 1]
+    }
+  ]
+}

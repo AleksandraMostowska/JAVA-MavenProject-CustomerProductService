@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Appenders>
+        <Console name="AMConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+<!--        <RollingFile-->
+<!--                name="AMFileAppender"-->
+<!--                fileName="logs/app.log"-->
+<!--                filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"-->
+<!--        >-->
+<!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %c{1.} [%t] %m%n" />-->
+<!--            <Policies>-->
+<!--                <SizeBasedTriggeringPolicy size="10 MB"/>-->
+<!--            </Policies>-->
+<!--            <DefaultRolloverStrategy max="10"/>-->
+<!--        </RollingFile>-->
+    </Appenders>
+    <Loggers>
+        <Logger name="ErrorsHandling" level="warn" additivity="true">
+            <AppenderRef ref="AMConsoleAppender"/>
+        </Logger>
+<!--        <Logger name="mostowska.aleksandra" level="info" additivity="false">-->
+<!--            <AppenderRef ref="AMConsoleAppender"/>-->
+<!--        </Logger>-->
+<!--        <Logger name="AMFileLogger" level="info">-->
+<!--            <AppenderRef ref="AMFileAppender"/>-->
+<!--        </Logger>-->
+        <Root level="info">
+            <AppenderRef ref="AMConsoleAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

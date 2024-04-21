@@ -1,0 +1,96 @@
+{
+  "products": [
+    {
+      "Electronics": [
+        {
+          "id": 1,
+          "name": "Smartphone",
+          "category": "Electronics",
+          "price": 800
+        },
+        {
+          "id": 2,
+          "name": "Laptop",
+          "category": "Electronics",
+          "price": 1200
+        }
+      ]
+    },
+    {
+      "Groceries": [
+        {
+          "id" : 1,
+          "name": "Milk",
+          "category": "Groceries",
+          "price": 5
+        },
+        {
+          "id" : 2,
+          "name": "Orange juice",
+          "category": "Groceries",
+          "price": 12
+        },
+        {
+          "id" : 3,
+          "name": "Cookies",
+          "category": "Groceries",
+          "price": 25
+        }
+      ]
+    },
+    {
+      "Furniture": [
+        {
+          "id" : 1,
+          "name": "Sofa",
+          "category": "Furniture",
+          "price": 2500
+        },
+        {
+          "id" : 2,
+          "name": "Table",
+          "category": "Furniture",
+          "price": 550
+        }
+      ]
+    },
+    {
+      "Fashion": [
+        {
+          "id" : 1,
+          "name": "Shoes",
+          "category": "Fashion",
+          "price": 130
+        },
+        {
+          "id" : 2,
+          "name": "Jeans",
+          "category": "Fashion",
+          "price": 170
+        }
+      ]
+    },
+    {
+      "Beauty": [
+        {
+          "id" : 1,
+          "name": "Face cream",
+          "category": "Beauty",
+          "price": 90
+        },
+        {
+          "id" : 2,
+          "name": "Shower gel",
+          "category": "Beauty",
+          "price": 15
+        },
+        {
+          "id" : 3,
+          "name": "Body lotion",
+          "category": "Beauty",
+          "price": 35
+        }
+      ]
+    }
+  ]
+}

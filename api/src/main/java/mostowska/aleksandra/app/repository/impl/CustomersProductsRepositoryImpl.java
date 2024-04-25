@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.ToString;
 import mostowska.aleksandra.app.repository.CustomersProductsRepository;
+import mostowska.aleksandra.app.repository.fileHandler.impl.FileHandlerImpl;
 import mostowska.aleksandra.json.converter.imp.GsonConverter;
 import mostowska.aleksandra.json.deserializer.impl.CustomersJsonDeserializer;
 import mostowska.aleksandra.json.deserializer.impl.CategoriesAndProductsJsonDeserializer;
@@ -35,9 +36,22 @@ public class CustomersProductsRepositoryImpl implements CustomersProductsReposit
     }
 
     private static Map<Customer, List<Product>> getCustomersAndProducts(String customersFile, String categoriesAndProductsFile, String preferencesFile) {
-        var customers = getCustomersFromJson(customersFile);
-        var products = getCategoriesAndProductsFromJson(categoriesAndProductsFile).products();
-        var preferences = getPreferencesFromJson(preferencesFile);
+        var fileHandler = new FileHandlerImpl();
+
+        var customers = fileHandler.getCustomersFromJson(customersFile);
+        if (customers == null || customers.customers().isEmpty()) {
+            throw new IllegalArgumentException("No customers found");
+        }
+
+        var products = fileHandler.getCategoriesAndProductsFromJson(categoriesAndProductsFile).products();
+        if (products == null || products.isEmpty()) {
+            throw new IllegalArgumentException("No products found");
+        }
+
+        var preferences = fileHandler.getPreferencesFromJson(preferencesFile);
+        if (preferences == null || preferences.preferences().isEmpty()) {
+            throw new IllegalArgumentException("No preferences found");
+        }
 
         return customers.customers()
                 .stream()
@@ -53,21 +67,21 @@ public class CustomersProductsRepositoryImpl implements CustomersProductsReposit
     }
 
 
-    private static Customers getCustomersFromJson(String filename) {
-        var gsonConverter = new GsonConverter<Customers>(gson);
-        var customersJsonDeserializer = new CustomersJsonDeserializer(gsonConverter);
-        return customersJsonDeserializer.deserialize(filename);
-    }
-
-    private static CategoriesAndProducts getCategoriesAndProductsFromJson(String filename) {
-        var gsonConverter = new GsonConverter<CategoriesAndProducts>(gson);
-        var productsJsonDeserializer = new CategoriesAndProductsJsonDeserializer(gsonConverter);
-        return productsJsonDeserializer.deserialize(filename);
-    }
-
-    private static Preferences getPreferencesFromJson(String filename) {
-        var gsonConverter = new GsonConverter<Preferences>(gson);
-        var preferencesJsonDeserializer = new PreferencesJsonDeserializer(gsonConverter);
-        return preferencesJsonDeserializer.deserialize(filename);
-    }
+//    private static Customers getCustomersFromJson(String filename) {
+//        var gsonConverter = new GsonConverter<Customers>(gson);
+//        var customersJsonDeserializer = new CustomersJsonDeserializer(gsonConverter);
+//        return customersJsonDeserializer.deserialize(filename);
+//    }
+//
+//    private static CategoriesAndProducts getCategoriesAndProductsFromJson(String filename) {
+//        var gsonConverter = new GsonConverter<CategoriesAndProducts>(gson);
+//        var productsJsonDeserializer = new CategoriesAndProductsJsonDeserializer(gsonConverter);
+//        return productsJsonDeserializer.deserialize(filename);
+//    }
+//
+//    private static Preferences getPreferencesFromJson(String filename) {
+//        var gsonConverter = new GsonConverter<Preferences>(gson);
+//        var preferencesJsonDeserializer = new PreferencesJsonDeserializer(gsonConverter);
+//        return preferencesJsonDeserializer.deserialize(filename);
+//    }
 }

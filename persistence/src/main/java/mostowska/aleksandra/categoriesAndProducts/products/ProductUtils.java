@@ -9,6 +9,7 @@ public interface ProductUtils {
     static BigDecimal getTotalSpending(List<Product> productsPurchased) {
         if (productsPurchased == null || productsPurchased.isEmpty()) {
             logger.error("There are no products purchased.");
+            throw new IllegalArgumentException("No products in purchased products.");
         }
 
         return productsPurchased

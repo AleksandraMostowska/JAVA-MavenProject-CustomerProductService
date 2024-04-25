@@ -15,6 +15,7 @@ public interface CustomerUtils {
                                                             List<Map<String, List<Product>>> categoriesAndProducts,
                                                             Preferences preferences) {
 
+
         var prefs = PreferencesUtils.getPreferencesNames(preferences, customer.preferences);
         var cash = customer.cash;
         var purchased = new ArrayList<Product>();

@@ -11,17 +11,19 @@ public class App {
 
     public static void main(String[] args) {
         final var CUSTOMERS_FILE = "customers.json";
-        final var CATEGORIES_AND_PRODUCTS_FILE = "categoriesANdProducts.json";
+        final var CATEGORIES_AND_PRODUCTS_FILE = "categoriesAndProducts.json";
         final var PREFERENCES_FILE = "preferences.json";
 
         var customersAndProducts = new CustomersProductsRepositoryImpl(CUSTOMERS_FILE,
                 CATEGORIES_AND_PRODUCTS_FILE, PREFERENCES_FILE);
+        System.out.println(customersAndProducts.customersWithProducts());
+
         var service = new CustomersProductsServiceImpl(customersAndProducts);
         consoleLogger.info(service);
 
-        fileLogger.info(service.getCustomersWhoBoughtTheMostItems());
-        fileLogger.info(service.getCustomersWhoPaidTheMost());
-        fileLogger.info(service.getProductAndHowManyTimesWasBought());
-        fileLogger.info(service.getCategoriesSortedFromMostToLeastPopular());
+//        fileLogger.info(service.getCustomersWhoBoughtTheMostItems());
+//        fileLogger.info(service.getCustomersWhoPaidTheMost());
+//        fileLogger.info(service.getProductAndHowManyTimesWasBought());
+//        fileLogger.info(service.getCategoriesSortedFromMostToLeastPopular());
     }
 }
